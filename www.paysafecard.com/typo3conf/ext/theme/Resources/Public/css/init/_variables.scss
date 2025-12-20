@@ -1,0 +1,343 @@
+/**
+ * Bootstrap variables' overrides and custom global variables are defined here.
+ */
+
+// Color system
+
+// new Colors start
+
+//supporting colours
+$color-blue-1: #CCE3FF;
+$color-blue-2: #99B9FF;
+$color-blue-3: #668AFF;
+$color-blue-4: #335CF5;
+$color-blue-5: #0036C2;
+$color-blue-6: #00289D;
+$color-blue-7: #05226F;
+
+$color-purple-1: #FFD9FF;
+$color-purple-2: #F492F7;
+$color-purple-3: #D656D6;
+$color-purple-4: #AD1AAC;
+$color-purple-5: #910590;
+$color-purple-6: #6E0070;
+$color-purple-7: #4B004F;
+
+$color-neutral-1: #CDD2C8;
+$color-neutral-2: #AFB4AA;
+$color-neutral-3: #969B91;
+$color-neutral-4: #787D78;
+$color-neutral-5: #5F645A;
+$color-neutral-6: #414641;
+$color-neutral-7: #2C2E2C;
+
+$color-off-white: #F5F5F0;
+$color-off-black: #141414;
+
+$color-accent-green: #37DC4B;
+$color-accent-orange: #FF9B46;
+
+// main colors
+$primary-blue: $color-blue-5;
+$primary-off-white: $color-off-white;
+$primary-off-black: $color-off-black;
+
+$accent-blue: $color-blue-4;
+$accent-purple: $color-purple-2;
+
+$secondary-blue-dark: $color-blue-7;
+$secondary-blue-bright: $color-blue-1;
+$secondary-purple: $color-purple-1;
+
+$color-gray-bright: $color-neutral-1;
+$color-gray: $color-neutral-4;
+$color-gray-dark: $color-neutral-6;
+
+$color-white:#FFFFFF;
+$color-black: #000000;
+
+// new Colors start end
+
+
+//Primary Colors
+$color-bright-blue:             #3200FF;
+$color-bright-blue-120:         #2800CC;
+$color-bright-blue-10:          #EBE6FF;
+$color-bright-blue-20:          #D6CCFF;
+$color-bright-blue-40:          #AD99FF;
+$color-bright-blue-70:          #704DFF;
+$color-navy:                    #28005F; // ← body color
+$color-navy-120:                #20004C;
+$color-navy-20:                 #D4CCDF;
+$color-navy-70:                 #694D8F;
+//Neutral Colors
+$color-soft-grey:               #E9EBF4;
+$color-soft-grey-120:           #BABCC3;
+$color-soft-grey-75:            #EFF0F7;
+$color-soft-grey-50:            #F4F5FA;
+$color-soft-grey-25:            #FAFAFC;
+$color-white:                   #FFFFFF;
+//Accent Colors
+$color-sky-blue:                #6DDEFB;
+$color-pink:                    #FF20FF;
+$color-indigo:                  #7000FF;
+$color-green:                   #84DE7A;
+$color-light-coral:             #FF7D7D;
+$color-orange:                  #FFB47D;
+$color-warm-blue:               #2A68F7;
+
+// additional colors from design
+$color-1:                       #EAE6EF;
+$color-2:                       #9480AF;
+$color-3:                       #9980FF;
+$color-warning:                 #DB2938;
+
+
+
+// Overrides
+$primary:                 $primary-blue;
+$secondary:               $accent-purple;
+$success:                 $color-accent-green;
+$info:                    $color-blue-3;
+$warning:                 $color-accent-orange;
+$danger:                  $color-light-coral;
+$light:                   $color-gray-bright;
+$dark:                    $color-blue-7;
+
+
+$body-color:              $primary-off-black;
+$yiq-text-dark:           $primary-blue;
+
+
+// Options
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1280px
+) ;
+
+
+$gradient-1: linear-gradient(2.98deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, $color-soft-grey 100%);
+
+// Links
+$link-decoration:         none;
+$link-hover-decoration:   none;
+$link-hover-color:        $secondary-blue-dark;
+
+
+// Typography
+$font-family-sans-serif:  "Denim", sans-serif;
+$font-family-base:        $font-family-sans-serif;
+$font-family-secondary:   "Denim WD", sans-serif;
+$font-family-poster:      $font-family-base; // old variable to be remove
+
+
+$font-size-base:          1rem;  //16px
+$font-size-lg:            $font-size-base * 1.25; // 20px
+$font-size-large:         1.125rem;  //18px
+$font-size-small:         0.875rem;  //14px
+$font-size-xs:            0.75rem;   //12px
+
+
+$font-weight-semibold:    600;
+$font-weight-bold:        700;
+
+$h1-font-size:            $font-size-base * 4;
+$h1-font-size-secondary:  $font-size-base * 3.37;
+$h2-font-size:            $font-size-base * 2.5;
+$h3-font-size:            $font-size-base * 2;
+$h4-font-size:            $font-size-base * 1.5;
+$h5-font-size:            $font-size-base * 1.3;
+$h6-font-size:            $font-size-base * 1.3;
+
+$h1-font-size-mobile:     $font-size-base * 2.5;
+$h2-font-size-mobile:     $font-size-base * 2;
+$h3-font-size-mobile:     $font-size-base * 1.5;
+$h4-font-size-mobile:     $font-size-base * 1.3;
+$h5-font-size-mobile:     $font-size-base * 1.25;
+$h6-font-size-mobile:     $font-size-base * 1.25;
+
+$headings-font-family:    $font-family-secondary;
+$headings-font-weight:    700;
+$headings-color:          $primary-off-black;
+
+
+// display-headings
+$display-font-sizes: (
+    1: 1.5rem,
+    2: 1.313rem,
+    3: 2.5rem,
+    4: 3.5rem,
+    5: 3.8rem,
+    6: 4rem
+) !default;
+
+
+$display-font-weight:     $font-weight-bold;
+$display-line-height:     1.25;
+
+
+// Components
+// common padding and border radius sizes and more.
+
+$line-height-base:        1.5;
+$line-height-lg:          1.75;
+$line-height-sm:          1.125;
+
+$border-radius:           0.25em;
+$border-radius-lg:        0.25rem;
+
+
+// Buttons + Forms
+
+$input-btn-padding-y:      .688rem;
+$input-btn-padding-x:      2rem;
+$input-btn-font-family:    $font-family-base;
+$input-btn-line-height:    1.25;
+
+$input-btn-padding-y-sm:   .5rem;
+$input-btn-padding-x-sm:   1rem;
+
+$input-btn-padding-y-lg:   .875rem;
+$input-btn-padding-x-lg:   1.5rem;
+$input-btn-font-size-lg:   $font-size-base;
+
+$input-btn-focus-width:       0;
+$input-btn-focus-color:       none;
+$input-btn-focus-box-shadow:  none;
+
+$input-border-radius:         $border-radius;
+$input-border-radius-lg:      $border-radius;
+$input-border-radius-sm:      $border-radius;
+
+
+
+// Buttons
+$btn-padding-y:            0.65rem;
+$btn-padding-x:            2rem;
+$btn-line-height:          1.25;
+
+$btn-padding-y-sm:        .5rem;
+$btn-padding-x-sm:        1rem;
+$btn-border-radius-sm:    .25rem;
+
+$btn-font-size-lg:        $font-size-base;
+$btn-line-height-lg:      1.25;
+
+$btn-font-weight:         500;
+$btn-box-shadow:         none; // to be removed
+$btn-focus-box-shadow:   none;
+
+// scss-docs-start form-input-variables
+$input-padding-y:         .83rem;
+$input-padding-x:         1rem;
+$input-border-color:      $color-gray-bright;
+$input-bg:                $primary-off-white;
+$input-placeholder-color: $primary-off-black;
+$input-focus-border-color: $primary-blue;
+$input-focus-color:        $primary-off-black;
+
+
+// select
+$form-select-padding-x:           0.83rem;
+$form-select-padding-y:           1rem;
+$form-select-indicator-padding:   1.5rem;
+$form-select-indicator-color:     $body-color;
+
+// Disable smooth scroll
+
+$enable-smooth-scroll:        false;
+
+// Carousel
+
+$carousel-indicator-width:           13px;
+$carousel-indicator-height:          13px;
+$carousel-indicator-hit-area-height: 13px;
+$carousel-indicator-spacer:          16px;
+$carousel-indicator-opacity:         1;
+$carousel-indicator-active-bg:       $primary-blue;
+$carousel-transition-duration:       1s;
+
+
+// form-floating-variables
+$form-floating-height:            3.13rem;
+$form-floating-padding-x:         .83rem;
+$form-floating-padding-y:         1rem;
+$form-floating-label-color:       rgba(20, 20, 20, 0.50);
+
+// form-text-variables
+$form-text-color:                 $body-color;
+$form-text-font-size:             $font-size-base;
+
+// form-feedback-variables
+$form-feedback-font-size:         $font-size-xs;
+
+// form-check-variables
+$form-check-input-border:         1px solid  $color-gray-bright;
+$form-check-input-width:          1.31em;
+$form-check-min-height:           1.31em;
+$form-check-input-bg:             $color-white;
+$form-check-radio-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$color-bright-blue}'/></svg>");
+$form-check-radio-checked-bg-image-2: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23FFFFFF'/%3e%3c/svg%3e");
+
+// custom block
+$block-box-shadow:  0px 9px 30px 0px rgba(20, 20, 20, 0.15);
+$block-box-shadow-hover: 0px 9px 30px 0px rgba(20, 20, 20, 0.15);
+$block-border-radius: 0.5em;
+
+
+// table-variables
+$table-striped-bg:                 $color-blue-1;
+$table-border-width:               0;
+$table-cell-padding-y:            1rem;
+$table-cell-padding-x:            1.5rem;
+$table-cell-padding-y-sm:        .5rem;
+$table-cell-padding-x-sm:        .5rem;
+$table-striped-order:             even;
+$table-bg:                        $color-off-white;
+
+
+// form-switch-variables
+//$form-switch-bg-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='48px' height='32px' viewBox='0 0 48 32' version='1.1'%3e%3ctitle%3e76655B09-BD07-43D8-AE94-769935DB3C19%3c/title%3e%3cg id='Style-sheet' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='UI-Style-Sheet' transform='translate(-424.000000, -5976.000000)'%3e%3cg id='Group-7' transform='translate(424.000000, 5976.000000)'%3e%3ccircle id='Oval' fill='%23FFFFFF' fill-rule='nonzero' cx='32' cy='16' r='12'/%3e%3cline x1='34' y1='14' x2='30' y2='18' id='Path' stroke='%23D6CCFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cline x1='30' y1='14' x2='34' y2='18' id='Path' stroke='%23D6CCFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+//$form-switch-checked-bg-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='48px' height='32px' viewBox='0 0 48 32' version='1.1'%3e%3ctitle%3eA848B647-8696-4A5D-9BB7-C5981D95EBDB%3c/title%3e%3cg id='Style-sheet' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='UI-Style-Sheet' transform='translate(-344.000000, -5976.000000)'%3e%3cg id='Group-6' transform='translate(344.000000, 5976.000000)'%3e%3ccircle id='Oval' fill='%23FFFFFF' fill-rule='nonzero' cx='16' cy='16' r='12'/%3e%3cpolyline id='Path' stroke='%233200FF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' points='19 14 15.1875 18 13 15.6155'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+//$form-switch-focus-bg-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='48px' height='32px' viewBox='0 0 48 32' version='1.1'%3e%3ctitle%3e76655B09-BD07-43D8-AE94-769935DB3C19%3c/title%3e%3cg id='Style-sheet' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3e%3cg id='UI-Style-Sheet' transform='translate(-424.000000, -5976.000000)'%3e%3cg id='Group-7' transform='translate(424.000000, 5976.000000)'%3e%3ccircle id='Oval' fill='%23FFFFFF' fill-rule='nonzero' cx='32' cy='16' r='12'/%3e%3cline x1='34' y1='14' x2='30' y2='18' id='Path' stroke='%23D6CCFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cline x1='30' y1='14' x2='34' y2='18' id='Path' stroke='%23D6CCFF' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+
+$form-switch-bg-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='52' height='34' viewBox='0 0 52 34' fill='none'%3e%3cg id='Slide'%3e%3cpath id='Shape' fill-rule='evenodd' clip-rule='evenodd' d='M1 16C1 7.43959 7.93959 0.5 16.5 0.5H36.5C45.0604 0.5 52 7.43959 52 16C52 24.5604 45.0604 31.5 36.5 31.5H16.5C7.93959 31.5 1 24.5604 1 16Z' fill='%23CDD2C8'/%3e%3cg id='Pval' filter='url(%23filter0_d_13175_11)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.5 30C24.232 30 30.5 23.732 30.5 16C30.5 8.26801 24.232 2 16.5 2C8.76801 2 2.5 8.26801 2.5 16C2.5 23.732 8.76801 30 16.5 30Z' fill='white'/%3e%3cpath d='M30.25 16C30.25 23.5939 24.0939 29.75 16.5 29.75C8.90608 29.75 2.75 23.5939 2.75 16C2.75 8.40608 8.90608 2.25 16.5 2.25C24.0939 2.25 30.25 8.40608 30.25 16Z' stroke='%23141414' stroke-opacity='0.04' stroke-width='0.5'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter id='filter0_d_13175_11' x='0.5' y='2' width='32' height='32' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-opacity='0' result='BackgroundImageFix'/%3e%3cfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3e%3cfeOffset dy='2'/%3e%3cfeGaussianBlur stdDeviation='1'/%3e%3cfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/%3e%3cfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_13175_11'/%3e%3cfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_13175_11' result='shape'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e");
+$form-switch-checked-bg-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='52' height='34' viewBox='0 0 52 34' fill='none'%3e%3cg id='Slide'%3e%3cpath id='Shape' fill-rule='evenodd' clip-rule='evenodd' d='M51 16C51 7.43959 44.0604 0.5 35.5 0.5H15.5C6.93959 0.5 0 7.43959 0 16C0 24.5604 6.93959 31.5 15.5 31.5H35.5C44.0604 31.5 51 24.5604 51 16Z' fill='%230036C2'/%3e%3cg id='Oval' filter='url(%23filter0_d_13175_19271)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M35.5 30C27.768 30 21.5 23.732 21.5 16C21.5 8.26801 27.768 2 35.5 2C43.232 2 49.5 8.26801 49.5 16C49.5 23.732 43.232 30 35.5 30Z' fill='white'/%3e%3cpath d='M21.75 16C21.75 23.5939 27.9061 29.75 35.5 29.75C43.0939 29.75 49.25 23.5939 49.25 16C49.25 8.40608 43.0939 2.25 35.5 2.25C27.9061 2.25 21.75 8.40608 21.75 16Z' stroke='%23141414' stroke-opacity='0.04' stroke-width='0.5'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter id='filter0_d_13175_19271' x='19.5' y='2' width='32' height='32' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-opacity='0' result='BackgroundImageFix'/%3e%3cfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3e%3cfeOffset dy='2'/%3e%3cfeGaussianBlur stdDeviation='1'/%3e%3cfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/%3e%3cfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_13175_19271'/%3e%3cfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_13175_19271' result='shape'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e");
+$form-switch-focus-bg-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='52' height='34' viewBox='0 0 52 34' fill='none'%3e%3cg id='Slide'%3e%3cpath id='Shape' fill-rule='evenodd' clip-rule='evenodd' d='M1 16C1 7.43959 7.93959 0.5 16.5 0.5H36.5C45.0604 0.5 52 7.43959 52 16C52 24.5604 45.0604 31.5 36.5 31.5H16.5C7.93959 31.5 1 24.5604 1 16Z' fill='%23CDD2C8'/%3e%3cg id='Pval' filter='url(%23filter0_d_13175_11)'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.5 30C24.232 30 30.5 23.732 30.5 16C30.5 8.26801 24.232 2 16.5 2C8.76801 2 2.5 8.26801 2.5 16C2.5 23.732 8.76801 30 16.5 30Z' fill='white'/%3e%3cpath d='M30.25 16C30.25 23.5939 24.0939 29.75 16.5 29.75C8.90608 29.75 2.75 23.5939 2.75 16C2.75 8.40608 8.90608 2.25 16.5 2.25C24.0939 2.25 30.25 8.40608 30.25 16Z' stroke='%23141414' stroke-opacity='0.04' stroke-width='0.5'/%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cfilter id='filter0_d_13175_11' x='0.5' y='2' width='32' height='32' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3e%3cfeFlood flood-opacity='0' result='BackgroundImageFix'/%3e%3cfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3e%3cfeOffset dy='2'/%3e%3cfeGaussianBlur stdDeviation='1'/%3e%3cfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0'/%3e%3cfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_13175_11'/%3e%3cfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_13175_11' result='shape'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e");
+$form-switch-width: 3.187em;
+$form-switch-height: 1.937em;
+
+
+//  form-file-variables
+$form-file-button-color:          $color-white;
+$form-file-button-bg:             $color-bright-blue;
+$form-file-button-hover-bg:       $color-bright-blue-120;
+
+// form-feedback-variables
+$form-feedback-valid-color:        $color-1;
+$form-feedback-icon-invalid:       none;
+$form-feedback-icon-valid:         none;
+
+// Tabs
+$nav-tabs-border-color:             none;
+$nav-tabs-border-width:             0;
+$nav-tabs-border-radius:            0;
+$nav-tabs-link-hover-border-color:  transparent;
+$nav-tabs-link-active-color:        inherit;
+$nav-tabs-link-active-bg:           transparent;
+$nav-tabs-link-active-border-color: transparent;
+
+$breadcrumb-active-color: #3D196F;
+$breadcrumb-divider:  url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='6px' height='10px' viewBox='0 0 6 10' version='1.1'%3e%3ctitle%3ePath%3c/title%3e%3cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3e%3cg id='40.-Breadcrumbs' transform='translate(-262.000000, -1547.000000)' stroke='%233D196F'%3e%3cg id='Icons/system/chevron-left-Copy-4' transform='translate(265.000000, 1552.000000) scale(-1, 1) translate(-265.000000, -1552.000000) translate(262.500000, 1547.000000)'%3e%3cg id='chevron-down' transform='translate(2.500000, 5.000000) rotate(-270.000000) translate(-2.500000, -5.000000) translate(-2.500000, 2.500000)'%3e%3cpolyline id='Path' points='0 0 5 5 10 0'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+$breadcrumb-divider-bright:  url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='6px' height='10px' viewBox='0 0 6 10' version='1.1'%3e%3ctitle%3ePath%3c/title%3e%3cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3e%3cg id='40.-Breadcrumbs' transform='translate(-262.000000, -1547.000000)' stroke='%23E9EBF4'%3e%3cg id='Icons/system/chevron-left-Copy-4' transform='translate(265.000000, 1552.000000) scale(-1, 1) translate(-265.000000, -1552.000000) translate(262.500000, 1547.000000)'%3e%3cg id='chevron-down' transform='translate(2.500000, 5.000000) rotate(-270.000000) translate(-2.500000, -5.000000) translate(-2.500000, 2.500000)'%3e%3cpolyline id='Path' points='0 0 5 5 10 0'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+$breadcrumb-active-color-bright: #E9EBF4;
+.breadcrumb-section .breadcrumb {
+    --bs-breadcrumb-padding-x: .25em;
+}

@@ -1,0 +1,1020 @@
+@import "../css/init/_icons";
+@import "../css/init/_variables";
+@import "../css/init/_bootstrap";
+@import "../css/init/_mixins";
+
+.storelocator {
+    .storelocator__hero {
+        position: relative;
+        background: linear-gradient(180deg, #05226F 0%, #0036C2 100%), #0036C2;
+
+        //background: linear-gradient(90deg, #e9ebf4 5%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
+        .storelocator__map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+        &.show-map-section {
+            .storelocator__map {
+                z-index: 1;
+                background-image: none !important;
+            }
+        }
+    }
+    .show-map-section + .decoration {
+        padding-bottom: 4rem;
+    }
+    .container-xl {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    }
+    .storelocator__hero-content {
+        position: relative;
+        top: 7.5rem;
+        h1, p {
+            z-index: 2;
+            position: relative;
+            color: $color-white;
+        }
+        @include media-breakpoint-up(md) {
+            .col-12.col-lg-5 {
+                margin-bottom: 5rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+    .storelocator__block {
+        box-shadow: 0 9px 25px 0 rgba(20, 20, 20, 0.30);
+        border-radius: $border-radius;
+        background-color: $color-white;
+        padding: 1.5rem 1rem;
+        margin-top: 2.5rem;
+        transition: all 0.3s;
+        z-index: 1;
+        position: relative;
+        min-width: 390px;
+        .btn.btn-lg {
+            min-width: 100%;
+        }
+        .two-btn {
+            display: flex;
+            align-items: self-start;
+            .btn.btn-primary {
+                margin-right: 12px;
+            }
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                .btn.btn-primary{
+                    margin-bottom: 1.5rem;
+                }
+            }
+            .btn-lg {
+                min-width: 154px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        .form-control.js-search-field {
+            padding-right: 2.5rem;
+        }
+        p {
+            color: $color-off-black;
+        }
+        .form {
+            margin-bottom: 1.5rem;
+            @include media-breakpoint-down(xl) {
+                margin-bottom: 0;
+            }
+            .col-12:first-child {
+               .form-floating {
+                   label {
+                       padding-right: 0;
+                       width: 110%;
+                   }
+               }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            padding: 1.7rem 2rem;
+        }
+        @include media-breakpoint-up(xl) {
+            min-width: 820px;
+            .form {
+                .col-12:first-child {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(xl) {
+            .form-check {
+                margin-bottom: 1.5rem;
+            }
+            .form {
+                .col-12:nth-child(1) {
+                    order: 1;
+                    margin-bottom: 1.5rem;
+                }
+                .col-12:nth-child(2) {
+                    order: 3;
+                }
+                .col-12:nth-child(3) {
+                    order: 2;
+                }
+                .col-12:nth-child(4) {
+                    order: 4;
+                }
+            }
+        }
+
+    }
+
+    .storelocator-autocomplete__dropdown {
+        padding: 14px 0 0 14px;
+        background: $color-white;
+        color: $color-off-black;
+        border-radius: 0.25rem;
+        @include media-breakpoint-down(md) {
+            background: $color-white;
+            margin-top: 2px;
+            border-radius: 0.75em;
+        }
+
+        .js-autocomplete-results {
+            .pac-item {
+                cursor: pointer;
+                margin-bottom: 10px;
+                display: block;
+                color: $color-off-black;
+                &:hover {
+                    color: $primary-blue;
+                }
+            }
+        }
+        .places-autocomplete__copyright {
+            max-width: 100px;
+        }
+    }
+
+    .storelocator-btn {
+        display: block;
+        position: absolute;
+        right: 12px;
+        top: 13px;
+        &:after {
+            content: '';
+            display: block;
+            background-image: $icon-storelocator;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .storelocator__sales-view {
+        margin-top: 10rem;
+    }
+    .storelocator__sales-outlet {
+        box-shadow: $block-box-shadow;
+        transition: all 0.3s;
+        border-radius: $block-border-radius;
+        background: $color-white;
+        min-height: 255px;
+        margin-bottom: 20px;
+        &:hover, &:focus {
+            box-shadow: $block-box-shadow-hover;
+        }
+    }
+
+    .gm-style .gm-style-iw-c {
+        box-shadow: 0 9px 30px 0 rgba(40,0,95,0.15);
+        padding: 7px 10px;
+        .map-infowindow {
+            font-family: $font-family-base;
+            font-size: $font-size-small;
+            font-weight: $font-weight-normal;
+            color: rgba(20, 20, 20, 0.40);
+            line-height: 1.5;
+            display: block;
+            span {
+                font-weight: $font-weight-semibold;
+                color: $color-blue-7;
+            }
+        }
+        .gm-style-iw-d {
+            overflow: hidden !important;
+            padding-right: 1.7rem;
+            padding-bottom: 0.8rem;
+        }
+        .gm-ui-hover-effect {
+            top: -2px !important;
+            right: 0 !important;
+            img {
+                width: 18px !important;
+                height: 18px !important;
+            }
+        }
+        .rating-stars {
+            display: inline-block;
+            position: relative;
+            margin-top: 3px;
+            .star {
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                background: $icon-star-full;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-right: 2px;
+                &.star--empty {
+                    background: $icon-star-empty;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                &:last-of-type {
+                    margin-right: 6px;
+                }
+            }
+        }
+        .feedback-sum {
+            display: inline-block;
+            position: relative;
+            bottom: 3px;
+            font-size: $font-size-xs;
+            font-weight: $font-weight-normal;
+        }
+    }
+
+    .js-result-list .js-pos-list-entry {
+        display: none;
+    }
+    .col-md-3.d-flex.justify-content-center {
+        .btn.btn-tertiary {
+            margin-top: 2rem;
+            height: 43px;
+            min-width: 100px;
+            background-size: 28px;
+        }
+    }
+    .js-search-not-found {
+        background-color: transparent !important;
+    }
+}
+
+.sales-outlet__rating-dialog {
+    background: $color-white;
+    box-shadow: 0 4px 12px 0 rgba(40, 0, 95, 0.30);
+    border-radius: $block-border-radius;
+    padding: 18px;
+    min-height: 255px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 2px solid $primary-blue;
+    .form-check {
+        margin-bottom: 0.7rem;
+        line-height: 1.3;
+    }
+
+    .btn.mt-auto {
+        min-width: 120px;
+        max-width: 120px;
+    }
+    .mt-auto {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .btn {
+            min-width: 130px;
+            font-size: $btn-font-size-sm;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 0.5rem;
+            }
+        }
+        .js-trigger-rating-cancel {
+            min-width: 100px;
+        }
+    }
+    .display-2 {
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        .mt-auto {
+            padding-top: 0.5rem;
+        }
+        .invalid-feedback {
+            margin-bottom: 0.5rem;
+            padding-left: 0;
+        }
+    }
+ /*   @include media-breakpoint-up(md) {
+        .btn {
+            @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius);
+            min-width: 112px;
+        }
+    }*/
+}
+
+html[lang="ar"] {
+    .storelocator__hero-content {
+        direction: ltr;
+        .col-12.js-header-text {
+            direction: rtl;
+        }
+        .storelocator__block {
+            direction: rtl;
+            .form .col-12:first-child .form-floating label {
+                width: auto;
+            }
+        }
+    }
+}
+html[lang="gr"] {
+    @include media-breakpoint-down(md) {
+        .sales-outlet__content {
+            .sales-outlet__img {
+                min-width: 80px;
+                img {
+                    max-width: 60px;
+                }
+            }
+        }
+    }
+}
+
+html[lang="ka"] {
+    @include media-breakpoint-down(sm) {
+        .storelocator .storelocator__block .form .col-12:first-child .form-floating label {
+            width: 115%;
+            font-size: $font-size-small;
+        }
+    }
+}
+
+
+.storelocator-teaser {
+
+    .storelocator-teaser__block {
+        @include card-shadow();
+        padding:30px;
+        @include media-breakpoint-down(md) {
+            margin-top:2rem;
+        }
+    }
+    .form.row {
+        .col-12 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    h2, h3 {
+        font-size: 2.5rem;
+        line-height: 1.25;
+    }
+}
+
+
+// new one
+
+.storelocator {
+    &:not(.storelocator__active, .js-storelocator-teaser) {
+        //margin-bottom: 80px;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: $color-off-white;
+            z-index: -2;
+            bottom: 0;
+        }
+        @include media-breakpoint-up(md) {
+            //height: 680px;
+        }
+
+        .storelocator__right {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        .storelocator__mobile-tabs {
+            display: none;
+        }
+    }
+    &.js-storelocator-teaser {
+        height: auto;
+        margin-bottom: auto;
+
+        .storelocator-autocomplete__dropdown {
+            padding-bottom: 12px;
+        }
+    }
+
+    &.storelocator__active {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: $color-off-white;
+            z-index: -2;
+            bottom: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 56px;
+            height: 740px;
+
+            & > *  {
+                flex: 1 100%;
+            }
+        }
+
+        @media (min-width: 1550px) {
+            height: 850px;
+        }
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+
+        .storelocator__hero.storelocator__left {
+            height: 600px;
+
+           @media (min-width: 1550px) {
+                height: 700px;
+                .storelocator__map {
+                    height: 700px;
+                }
+           }
+
+            @media (min-width: 1550px) {
+                .storelocator__map {
+                    height: 700px;
+                }
+            }
+            @include media-breakpoint-between(md, xxl) {
+                .storelocator__map {
+                    height: 600px;
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                min-height: 600px;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 610px;
+                &.fade:not(.show) {
+                    display: none;
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+
+                &.fade:not(.show) {
+                    opacity: 1;
+                }
+            }
+            .storelocator__map {
+                width: 100%;
+            }
+
+            .storelocator__hero-content {
+
+                @include media-breakpoint-up(md) {
+                    top: 10.5rem;
+                }
+
+                @media (min-width: 1550px) {
+                    top: 21rem;
+                }
+
+                .col-12.col-md-10.col-lg-7 {
+                     width: 60%;
+                    @include media-breakpoint-between(md, xl) {
+                        width: 70%;
+                    }
+                    @include media-breakpoint-down(md) {
+                        width: 100%;
+                    }
+                    .storelocator__block {
+                        margin-top: 0;
+
+                        @include media-breakpoint-up(xl) {
+                            margin-left: 5%;
+                        }
+                        @include media-breakpoint-down(md) {
+                            margin-top: -4rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .storelocator__right {
+
+            background: rgba(245, 245, 240, 0.66);
+            backdrop-filter: blur(7.5px);
+            padding: 100px 20px 10px 10px;
+            position: relative;
+
+            @include media-breakpoint-up(md) {
+                padding: 20px 15px 20px 10px;
+                min-width: 320px;
+                max-width: 335px;
+                overflow: hidden;
+                overflow-y: scroll;
+                height: 600px;
+
+                &.fade:not(.show) {
+                    opacity: 1;
+                }
+            }
+
+            @media only screen and (min-width: 1550px) {
+                height: 700px;
+            }
+
+            @include media-breakpoint-down(md) {
+                padding: 25px 20px 10px 20px;
+                &.fade:not(.show) {
+                    display: none;
+                }
+            }
+
+            scrollbar-color: $primary-blue $color-off-white; /* thumb and track color for firefox */
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+                height: 10px;
+                background-color: $color-off-white;
+                border-left: 150px solid $color-white;
+            }
+            &::-webkit-scrollbar-track {
+                margin-left: 150px;
+            }
+            &::-webkit-scrollbar-thumb:vertical {
+                border-radius: 2rem;
+                width: 15px;
+                background-color: $primary-blue;
+            }
+        }
+
+        .sales-outlet__search-result {
+            display: none;
+            padding-left: 0;
+            p {
+                font-size: $font-size-small;
+                span {
+                    font-weight: $font-weight-semibold;
+                }
+            }
+        }
+
+        .sales-outlet__sorting  {
+            display: none;
+            .col-12 {
+                display: flex;
+                margin-bottom: 15px;
+                box-shadow: $block-box-shadow;
+                transition: all 0.3s;
+                border-radius: $block-border-radius;
+                background: $color-white;
+                padding: 16px;
+                justify-content: space-evenly;
+
+                &:hover, &:focus {
+                    box-shadow: $block-box-shadow-hover;
+                }
+                p {
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+                .form-check {
+                    margin-right: 15px;
+                    .form-check-input {
+                        border: 2px solid #DBCCFF;
+                    }
+                    .form-check-label {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+
+
+        .sales-outlet__container {
+
+            .sales-outlet__box {
+                box-shadow: 0 4px 12px 0 rgba(40, 0, 95, 0.30);
+                transition: all 0.3s;
+                border-radius: $block-border-radius;
+                background: $color-white;
+                padding: 16px 18px 0 18px;
+                margin-bottom: 15px;
+
+                .sales-outlet__content {
+                    margin-right: -16px;
+                    margin-left: -16px;
+                    .col-12 {
+                        .col-4 {
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                    }
+                    .display-2 {
+                        margin-bottom: 0.4rem;
+                        font-size: 1.1rem;
+                    }
+                }
+
+            }
+
+            .row.sales-outlet__btn {
+                border-top:1px solid $color-soft-grey;
+                text-align: center;
+                &.sales-outlet__btn-primary {
+                    border-top: none;
+                    padding-bottom: 20px;
+                }
+                .col:first-child {
+                    border-right: 1px solid $color-soft-grey;
+                }
+                .sales-outlet__map, .sales-outlet__direction {
+                    font-weight: $font-weight-semibold;
+                    display: block;
+                    padding: 10px 0 12px;
+                }
+            }
+
+            .sales-outlet__rating {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .sales-outlet__stars {
+                display: flex;
+                flex-direction: row;
+                font-size: $font-size-xs;
+                padding-top: 1px;
+                margin-right: 10px;
+                .star {
+                    display: block;
+                    width: 1rem;
+                    height: 1rem;
+                    background: $icon-star-full;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin-right: 3px;
+                    &.star--empty {
+                        background: $icon-star-empty;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    &:last-of-type {
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .sales-outlet__rating-link {
+                color: $primary-blue;
+                font-size: $font-size-small;
+                font-weight: $font-weight-semibold;
+            }
+
+            .sales-outlet__info {
+                margin: 20px 0 15px;
+            }
+
+            .sales-outlet__address, .sales-outlet__open-state, .sales-outlet__available,
+            .sales-outlet__promo, .sales-outlet__warning {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                line-height: 18px;
+                &:before {
+                    content: "";
+                    display: block;
+                    min-width: 1rem;
+                    width: 1rem;
+                    height: 1rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin-right: 7px;
+                    margin-top: 1px;
+                }
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+            .sales-outlet__address {
+                &:before {
+                    background: $icon-storelocator-location;
+                }
+            }
+            .sales-outlet__open-state {
+                &:before {
+                    background: $icon-storelocator-open;
+                }
+
+                .sales-outlet__open-no {
+                    position: relative;
+                    .sales-outlet__close {
+                        color: #CF0101;
+                        display: inline-block;
+                        &:after {
+                            content: "";
+                            display: inline-block;
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 50%;
+                            background-color: #a999bf;
+                            position: relative;
+                            margin: 2px 12px;
+                        }
+                    }
+                }
+                .sales-outlet__open-time {
+                    display: inline-block;
+                    color: $primary-blue;
+                    font-weight: $font-weight-semibold;
+                }
+            }
+            .sales-outlet__available {
+                &:before {
+                    background: $icon-storelocator-available;
+                }
+            }
+            .sales-outlet__promo {
+                &:before {
+                    background: $icon-storelocator-promo;
+                }
+            }
+
+            .sales-outlet__warning {
+                &:before {
+                    background: $icon-storelocator-warning;
+                }
+            }
+
+            .sales-outlet__open-view {
+                display: block;
+                min-width: 18px;
+                width: 18px;
+                height: 18px;
+                background: $icon-storelocator-arrow-down;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-left: 5px;
+                margin-top: 1px;
+            }
+            .sales-outlet__open-collapse {
+                ul {
+                    margin-bottom: 0;
+                    padding-left: 2rem;
+                    li {
+                        span {
+                            min-width: 110px;
+                            display: inline-block;
+                        }
+                    }
+                }
+                p {
+                    padding-left: 2rem;
+                }
+            }
+
+            .sales-outlet__rating-done {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 128px;
+                    height: auto;
+                }
+                p {
+                    line-height: 1.3;
+                }
+            }
+
+        }
+
+        .storelocator__mobile-tabs  {
+            padding-top: 77px;
+            z-index: 2;
+            background: $color-white;
+            position: sticky;
+            top: 0;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+            @include media-breakpoint-down(md) {
+                display: block;
+            }
+
+            .nav-tabs {
+                height: 40px;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                .nav-link  {
+                    width: 50%;
+                    border-bottom: 5px solid $color-white;
+                    &.active {
+                        border-bottom: 5px solid #D6CCFF;
+                        color:$primary-blue;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .storelocator__mobile-map-active {
+            .form {
+                .form-check {
+                    margin-bottom: 0.7rem;
+                }
+            }
+            .mt-auto {
+                .btn {
+                    min-width: 130px;
+                    font-size: $btn-font-size-sm;
+                    @include media-breakpoint-down(sm) {
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+            .sales-outlet__box {
+                border: 1px solid $primary-blue;
+
+                .mt-auto {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                }
+            }
+        }
+
+
+
+        @include media-breakpoint-down(md) {
+            .storelocator__hero-content {
+                top: 3rem;
+                .col-12.col-lg-5 {
+                    display: none;
+                }
+            }
+            .storelocator__block {
+                box-shadow: none;
+                padding: 0.8rem;
+                &:hover, &:focus {
+                    box-shadow: none;
+                }
+                p {
+                    display: none;
+                }
+                .form {
+                    .form-floating {
+                        margin-bottom: 0;
+                    }
+                    .col-12:nth-child(1) {
+                        margin-bottom: 0
+                    }
+                    .col-12:last-of-type {
+                        display: none;
+                    }
+                }
+            }
+
+            .storelocator__mobile-map-active {
+                width: 93%;
+                margin:  0 auto;
+                position: relative;
+                display: block;
+                z-index: 1;
+                top: 19rem;
+            }
+        }
+
+
+        .lightbox {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 74px;
+            bottom: 0;
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease-in;
+            &.show {
+                background-color: rgba(0, 0, 0, 0.85);
+                opacity: 1;
+                visibility: visible;
+                z-index: 555;
+            }
+            .close-lightbox {
+                cursor: pointer;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 20px;
+                height: 20px;
+                z-index: 555;
+                &:after, &:before  {
+                    content: "";
+                    width: 3px;
+                    height: 20px;
+                    background-color: #ddd;
+                    position: absolute;
+                    border-radius: 5px;
+                    transform: rotate(45deg);
+                }
+                &:before {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            img {
+                max-width: 90%;
+                height: auto;
+                max-height: 90%;
+            }
+        }
+        .sales-outlet__img img {
+            width: 55px;
+            height: 55px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .js-pos-list-entry-active {
+            border: 1px solid $primary-blue;
+            border-bottom-left-radius: .6em;
+            border-bottom-right-radius: .6em;
+
+            .row.sales-outlet__btn {
+                background-color: $primary-blue;
+                border-bottom-left-radius: .6em;
+                border-bottom-right-radius: .6em;
+                margin-left: -14px;
+                margin-right: -14px;
+                a {
+                    color: $color-white;
+                    &:hover {
+                        color: $color-off-white;
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+@include media-breakpoint-down(md) {
+
+    body:not([data-frozen="0"]) header.bg-white {
+        height: 72px;
+    }
+
+}

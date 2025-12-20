@@ -1,0 +1,103 @@
+@mixin text-stroke($strokeColor: $color-bright-blue, $strokeWidth: 2px, $fillColor: transparent) {
+    color: $fillColor;
+    
+    @if $fillColor == transparent { 
+        color: $color-white;
+    }
+
+    text-shadow:
+        -1px -1px 0 $strokeColor,  
+        1px -1px 0 $strokeColor,
+        -1px  1px 0 $strokeColor,
+        1px  1px 0 $strokeColor;
+
+    @supports (-webkit-text-stroke: $color-bright-blue) or (text-stroke: $color-bright-blue) {
+        text-shadow: none;
+        color: $fillColor;
+        -webkit-text-stroke: $strokeWidth $strokeColor;
+        text-stroke: $strokeWidth $strokeColor;
+    }
+}
+
+@mixin card-shadow() {
+    background-color: $color-white;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 27px 2px rgba($color-navy, 0.15);
+    transition: box-shadow calc(var(--prefersMotion) * 0.3s) ease-in-out;
+
+    &:hover, &:focus {
+        box-shadow: 0 12px 30px 2px rgba($color-navy, 0.3);
+    }
+}
+
+.card-shadow {
+    @include card-shadow();
+}
+
+@mixin card-frosty() {
+    @include card-shadow();
+    background-color: rgba($color-white, 0.6);
+}
+
+.card-frosty {
+    @include card-frosty();
+}
+
+@keyframes psc-loading {
+    0% {
+        -webkit-mask-position: 41.5% center;
+        mask-position: 41.5% center;
+    }
+    
+    15% {
+        -webkit-mask-position: 24% center;
+        mask-position: 24% center;
+    }
+    
+    15.01% {
+        -webkit-mask-position: 75% center;
+        mask-position: 75% center;
+    }
+
+    25% {
+        -webkit-mask-position: 41.5% center;
+        mask-position: 41.5% center;
+    }
+    
+    100% {
+        -webkit-mask-position: 41.5% center;
+        mask-position: 41.5% center;
+    }
+}
+
+@mixin psc-loading-indicator($width: 2rem, $height: 2rem) {
+    position: relative;
+
+    &:after {
+        clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%, 0 50%);
+        background: $color-blue-5;
+        --ps-loading-mask: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='283' height='142'%3E%3Cg fill='%23A44141' fill-rule='evenodd'%3E%3Cpath d='M-.443 71.166 70.268.456l70.71 70.71-70.71 70.71z'/%3E%3Cpath d='M140.971.005 282.976 0v141.872L140.971 142z'/%3E%3C/g%3E%3C/svg%3E);
+        -webkit-mask: var(--ps-loading-mask) 41.5% center no-repeat;
+        mask: var(--ps-loading-mask) 41.5% center no-repeat;
+        -webkit-mask-size: auto 150%;
+        mask-size: auto 150%;
+        animation: psc-loading infinite 2s .3s ease-in;
+
+        content: "";
+        width: $width;
+        height: $height;
+        display: inline-block;
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    span {
+        position: absolute;
+        transform: translate(-9999px, 0);
+        overflow: hidden;
+        display: block;
+    }
+}
