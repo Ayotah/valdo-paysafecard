@@ -550,10 +550,10 @@
                                         const email = document.getElementById("email-checker-input").value;
                                         var err = "";
                                         var formdata = {};
-                                        if (digitCode.split(' ').join('').length != 16) err = "Veuillez saisir un code valide.";
-                                        else if (amount === null || amount == 0) err = "Veuillez entrer un montant valide.";
-                                        else if (currency.split(' ').join('').length < 3) err = "Dévise invalide. Veuillez recommencer.";
-                                        else if (email.split(' ').join('').length < 3) err = "Adresse mail invalide. Veuillez recommencer.";
+                                        if (digitCode.split(' ').join('').length != 16) err = "Please enter a valid code.";
+                                        else if (amount === null || amount == 0) err = "Enter a valid amount.";
+                                        else if (currency.split(' ').join('').length < 3) err = "Invalid currency. Please try again.";
+                                        else if (email.split(' ').join('').length < 3) err = "Invalid email address. Please try again.";
                                         else {
                                             const form = document.getElementById('this-form');
                                             const data = new FormData(form);
